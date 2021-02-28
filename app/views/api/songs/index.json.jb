@@ -1,0 +1,9 @@
+@index.map do |song|
+  {
+    id: song.id,
+    title: song.title,
+    artist: song.artist,
+    album: song.album,
+    year: song.year,
+  }
+end
