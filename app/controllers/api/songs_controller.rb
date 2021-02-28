@@ -13,4 +13,8 @@ class Api::SongsController < ApplicationController
     @song.save
     render 'show.json.jb'
   end
+  def show
+    @song = Song.find_by(id: params[:id])
+    render 'show.json.jb'
+  end
 end
