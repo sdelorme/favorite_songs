@@ -30,5 +30,10 @@ class Api::SongsController < ApplicationController
     @song.save
     render 'show.json.jb'
   end
-  
+  def destroy
+    @song = Song.find_by(id: params[:id])
+    @song.destroy
+
+    render json: {message: "This item has been deleted by you"}
+  end
 end
