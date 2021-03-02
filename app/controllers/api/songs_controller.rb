@@ -14,11 +14,7 @@ class Api::SongsController < ApplicationController
     render 'show.json.jb'
   end
   def show
-    if params[:id].to_i < Song.count
-      @song = Song.find_by(id: params[:id])
-    else
-      @song = Song.new
-    end
+    @song = Song.find_by(id: params[:id])
     render 'show.json.jb'
   end
   def update
